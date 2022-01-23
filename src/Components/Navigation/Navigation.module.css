@@ -1,0 +1,22 @@
+.nav{
+    background-color: #f6f6f6;
+    height: 50px;
+}
+.nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.nav li{
+    margin-right: 10px;
+}
+.active{
+    color: red;
+}
+.nav a{
+    text-decoration: none;
+}
+.nav a:hover{
+    color: royalblue;
+}
