@@ -9,14 +9,29 @@
     height: 100%;
 }
 .nav li{
-    margin-right: 10px;
+    margin-right: 60px;
 }
 .active{
     color: red;
 }
 .nav a{
     text-decoration: none;
+    font-size: 23px;
+    display: flex;
+
 }
 .nav a:hover{
     color: rgb(241, 83, 247);
+}
+.nav span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 58, 98);
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #f6f6f6;
 }

@@ -1,10 +1,20 @@
 import Layout from "../Layout/Layout";
 import * as data from "../Data/data";
-import { useCartActions } from "../Providers/CartProvider";
+import { toast } from "react-toastify";
+import { useCartActions, useCart } from "../Providers/CartProvider";
+const checkInCart = (cart, product) => {
+  return cart.find((c) => c.id === product.id);
+};
 const HomePage = () => {
+  const { cart } = useCart();
   const dispatch = useCartActions();
   const addProductHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
+    if (!checkInCart(cart, product)) {
+      toast.success(`${product.name} added to cart`);
+    }else{
+      toast.warning(`${product.name} already added`)
+    }
   };
   return (
     <Layout>
@@ -24,7 +34,7 @@ const HomePage = () => {
                   onClick={() => addProductHandler(product)}
                   className="btn primary"
                 >
-                  Add to cart
+                  {checkInCart(cart, product) ? "in cart" : " Add to cart"}
                 </button>
               </section>
             );

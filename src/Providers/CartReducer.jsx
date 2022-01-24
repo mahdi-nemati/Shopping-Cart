@@ -12,7 +12,11 @@ const CartReducer = (state, action) => {
         updatedItem.quantity++;
         updatedCart[index] = updatedItem;
       }
-      return { ...state, cart: updatedCart };
+      return {
+        ...state,
+        cart: updatedCart,
+        total: state.total + action.payload.offPrice,
+      };
     // increment quantity
     case "increment":
       const updatedInc = [...state.cart];
@@ -22,7 +26,11 @@ const CartReducer = (state, action) => {
       const selectedInc = { ...updatedInc[indexOfItem] };
       selectedInc.quantity++;
       updatedInc[indexOfItem] = selectedInc;
-      return { ...state, cart: updatedInc };
+      return {
+        ...state,
+        cart: updatedInc,
+        total: state.total + action.payload.offPrice,
+      };
     // decrement
     case "decrement":
       const updatedDec = [...state.cart];
@@ -34,11 +42,19 @@ const CartReducer = (state, action) => {
         const filterDec = updatedDec.filter(
           (item) => item.id !== action.payload.id
         );
-        return { ...state, cart: filterDec };
+        return {
+          ...state,
+          cart: filterDec,
+          total: state.total - action.payload.offPrice,
+        };
       }
       selectedDec.quantity--;
       updatedDec[indexOfItemDec] = selectedDec;
-      return { ...state, cart: updatedDec };
+      return {
+        ...state,
+        cart: updatedDec,
+        total: state.total - action.payload.offPrice,
+      };
     default:
       return state;
   }

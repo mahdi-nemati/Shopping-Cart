@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import styles from "../Navigation/Navigation.module.css";
+import { useCart } from "../../Providers/CartProvider";
 const Navigation = () => {
+  const { cart } = useCart();
   return (
     <header>
       <nav className={styles.nav}>
@@ -18,7 +20,8 @@ const Navigation = () => {
               to="/cart"
               className={(n) => (n.isActive ? `${styles.active}` : "")}
             >
-              cart
+              <p> cart</p>
+              {cart.length > 0 ? <span> {cart.length}</span> : ""}
             </NavLink>
           </li>
         </ul>

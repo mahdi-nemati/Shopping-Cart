@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import { useCart } from "../Providers/CartProvider";
-import { useCartActions } from "../Providers/CartProvider";
+import { useCart, useCartActions } from "../Providers/CartProvider";
+
 import "./CartItem.css";
 const CardPage = () => {
-  const { cart } = useCart();
+  const { cart, total } = useCart();
   const dispatch = useCartActions();
   // increment
   const incHandler = (item) => {
@@ -20,6 +20,9 @@ const CardPage = () => {
       payload: item,
     });
   };
+const originalTotalPrice = cart.length
+  ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
+  : 0;
 
   if (!cart.length)
     return (
@@ -43,7 +46,7 @@ const CardPage = () => {
                   </div>
                   <div className="cartDetails">
                     <div>{item.name}</div>
-                    <div> $ {item.price * item.quantity}</div>
+                    <div> $ {item.offPrice * item.quantity}</div>
                     <div className="cartBtn">
                       <button onClick={() => decHandler(item)}>remove</button>
                       <p> {item.quantity}</p>
@@ -54,7 +57,22 @@ const CardPage = () => {
               );
             })}
           </section>
-          <section className="summery">summery</section>
+          <section className="summery">
+            <h3>Cart Summery</h3>
+            {/* <p>$ {total}</p> */}
+            <div className="sumItem">
+              <p>cart total</p>
+              <span>$ {originalTotalPrice}</span>
+            </div>
+            <div className="sumItem">
+              <p>cart discount</p>
+              <span>$ {originalTotalPrice - total}</span>
+            </div>
+            <div className="sumItem net">
+              <p>net price</p>
+              <span>$ {total}</span>
+            </div>
+          </section>
         </section>
       </main>
     </Layout>
@@ -62,3 +80,4 @@ const CardPage = () => {
 };
 
 export default CardPage;
+
