@@ -1,0 +1,35 @@
+.productList {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.product{
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #f6f6f6;
+}
+.productImg img {
+  width: 100%;
+  height: auto;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+.productDetails{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  padding: 8px 0 ;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(150, 41, 212);
+  color: #fff;
+  cursor: pointer;
+}

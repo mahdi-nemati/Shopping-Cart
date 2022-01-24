@@ -15,10 +15,10 @@ const Navigation = () => {
           </li>
           <li>
             <NavLink
-              to="/card"
+              to="/cart"
               className={(n) => (n.isActive ? `${styles.active}` : "")}
             >
-              card
+              cart
             </NavLink>
           </li>
         </ul>
