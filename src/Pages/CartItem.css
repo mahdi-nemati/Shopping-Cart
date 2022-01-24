@@ -1,0 +1,36 @@
+.cartItemList{
+    width: 600px;
+    height: auto;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+.cartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+}
+.cartImage{
+    width: 100px;
+    height: 100px;
+}
+.cartImage img{
+    width: 100%;
+    height: auto;
+}
+.cartCenter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+}
+.cartBtn{
+    display: flex;
+}
