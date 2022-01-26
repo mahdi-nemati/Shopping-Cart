@@ -20,9 +20,9 @@ const CardPage = () => {
       payload: item,
     });
   };
-const originalTotalPrice = cart.length
-  ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
-  : 0;
+  const originalTotalPrice = cart.length
+    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
+    : 0;
 
   if (!cart.length)
     return (
@@ -48,9 +48,9 @@ const originalTotalPrice = cart.length
                     <div>{item.name}</div>
                     <div> $ {item.offPrice * item.quantity}</div>
                     <div className="cartBtn">
-                      <button onClick={() => decHandler(item)}>remove</button>
+                      <button onClick={() => decHandler(item)}>-</button>
                       <p> {item.quantity}</p>
-                      <button onClick={() => incHandler(item)}>Add</button>
+                      <button onClick={() => incHandler(item)}>+</button>
                     </div>
                   </div>
                 </div>
@@ -59,7 +59,6 @@ const originalTotalPrice = cart.length
           </section>
           <section className="summery">
             <h3>Cart Summery</h3>
-            {/* <p>$ {total}</p> */}
             <div className="sumItem">
               <p>cart total</p>
               <span>$ {originalTotalPrice}</span>
@@ -72,6 +71,9 @@ const originalTotalPrice = cart.length
               <p>net price</p>
               <span>$ {total}</span>
             </div>
+            <Link to="/checkout">
+              <button className="btn primary">Check Out</button>
+            </Link>
           </section>
         </section>
       </main>
@@ -80,4 +82,3 @@ const originalTotalPrice = cart.length
 };
 
 export default CardPage;
-
