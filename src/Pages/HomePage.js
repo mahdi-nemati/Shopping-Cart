@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <Layout>
       <main className="container">
-        <section className="productList">
+        {/* <section className="productList">
           {data.products.map((product) => {
             return (
               <section className="product" key={product.id}>
@@ -39,7 +39,7 @@ const HomePage = () => {
               </section>
             );
           })}
-        </section>
+        </section> */}
       </main>
     </Layout>
   );
