@@ -1,13 +1,13 @@
 import Input from "../../common/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { signupUser } from "../../services/SignupService";
-import MyToast from "../../common/MyToast";
 import { toast } from "react-toastify";
+import { useAuthAction } from "../../Providers/AuthProvider";
 const SignupForm = () => {
-  const [error, setError] = useState(null);
+  const setAuth = useAuthAction();
+  const navigate = useNavigate();
   // set initail
   const initialValues = {
     name: "",
@@ -26,11 +26,12 @@ const SignupForm = () => {
     };
     try {
       const { data } = await signupUser(userData);
-      console.log(data);
+      setAuth(data);
+      localStorage.setItem("authState", JSON.stringify(data));
+      navigate("/");
     } catch (error) {
       if (error.response && error.response.data.message) {
-        MyToast( "", error.response.data.message);
-        // toast.error(`${error.response.data.message}`)
+        toast.error(`${error.response.data.message}`);
       }
     }
   };
@@ -83,7 +84,6 @@ const SignupForm = () => {
         >
           Signup
         </button>
-        {error && <p>{error}</p>}
         <Link to="/login">
           <p>Already Login ?</p>
         </Link>

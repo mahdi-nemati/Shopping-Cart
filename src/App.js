@@ -8,9 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 import CheckoutPage from "./Pages/CheckoutPage";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import AuthPeovider from "./Providers/AuthProvider";
 function App() {
   return (
-    <>
+    <AuthPeovider>
       <CartProviders>
         <section>
           <ToastContainer />
@@ -23,7 +24,7 @@ function App() {
           </Routes>
         </section>
       </CartProviders>
-    </>
+    </AuthPeovider>
   );
 }
 
