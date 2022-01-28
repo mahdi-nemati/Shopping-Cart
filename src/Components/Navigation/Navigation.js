@@ -10,10 +10,13 @@ const Navigation = () => {
   const userData = useAuth();
   return (
     <header>
-      <nav class="bg-teal-300	h-16 fixed top-0 w-full text-2xl text-teal-800	">
-        <div class="flex  items-center justify-between h-full">
+      <nav class="bg-teal-300	h-16 md:h-20 lg:h-24 fixed top-0 w-full 
+      text-2xl text-teal-800 sm:flex sm:justify-center 
+      sm:text-3xl md:text-4xl lg:text-5xl">
+        <div class="flex  items-center justify-between h-full sm:w-11/12 ">
           <ul class="flex items-center justify-center ml-3">
-            <li class="mr-4 text-lg">
+            <li class="mr-4 text-lg sm:mr-8 sm:text-xl md:text-2xl md:mr-10 
+            lg:text-3xl lg:mr-16">
               <p>Mahdi Shop</p>
             </li>
             <li>
@@ -35,7 +38,7 @@ const Navigation = () => {
                 {cart.length > 0 ? <span> {cart.length}</span> : ""}
               </NavLink>
             </li>
-            <li class="ml-4">
+            <li class="ml-4 sm:ml-8 md:ml-10 lg:ml-16">
               {userData ? (
                 <p>Welcome</p>
               ) : (

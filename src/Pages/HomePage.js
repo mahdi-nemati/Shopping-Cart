@@ -12,34 +12,31 @@ const HomePage = () => {
     dispatch({ type: "ADD_TO_CART", payload: product });
     if (!checkInCart(cart, product)) {
       toast.success(`${product.name} added to cart`);
-    }else{
-      toast.warning(`${product.name} already added`)
+    } else {
+      toast.warning(`${product.name} already added`);
     }
   };
   return (
     <Layout>
-      <main className="container">
-        {/* <section className="productList">
+      <main>
+        <section class="flex flex-wrap">
           {data.products.map((product) => {
             return (
-              <section className="product" key={product.id}>
-                <div className="productImg">
+              <section key={product.id}>
+                <div class="">
                   <img src={product.image} alt={product.name}></img>
                 </div>
-                <div className="productDetails">
+                <div>
                   <p>{product.name}</p>
                   <p> $ {product.price}</p>
                 </div>
-                <button
-                  onClick={() => addProductHandler(product)}
-                  className="btn primary"
-                >
+                <button onClick={() => addProductHandler(product)}>
                   {checkInCart(cart, product) ? "in cart" : " Add to cart"}
                 </button>
               </section>
             );
           })}
-        </section> */}
+        </section>
       </main>
     </Layout>
   );
