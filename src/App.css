@@ -24,15 +24,22 @@
   display: flex;
   justify-content: space-between;
 }
-.btn{
-  padding: 8px 0 ;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  background-color: rgb(150, 41, 212);
-  color: #fff;
-  cursor: pointer;
-}
+
 button:disabled{
   cursor: not-allowed;
+  background-color: #ccc;
+  width: 100%;
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 60%;
+}
+.btn{
+  background-color: #3b82f6;
+  width: 100%;
+  color: #e4e4e7;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 60%;
 }

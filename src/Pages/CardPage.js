@@ -48,7 +48,7 @@ const CardPage = () => {
   return (
     <Layout>
       <main>
-        <section class="flex flex-col md:flex-row lg:mt-20">
+        <section class="flex flex-col md:flex-row md:mt-20">
           <section class="mt-20 pl-2 pr-2 sm:pl-8 sm:pr-8 md:w-8/12 ">
             {cart.map((item) => {
               return (

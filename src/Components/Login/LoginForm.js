@@ -48,25 +48,46 @@ const LoginForm = () => {
     enableReinitialize: true,
   });
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
-        {/* email */}
-        <Input formik={formik} name="email" />
-        {/* password */}
-        <Input formik={formik} name="password" type="password" />
-        {/* submit button */}
-        <button
-          className={formik.isValid ? "button" : ""}
-          disabled={!formik.isValid}
-          type="submit"
+    <main class="flex justify-center  h-auto">
+      <section class="flex justify-center text-teal-800 ">
+        <div
+          class="mt-20 sm:mt-24 md:mt-32 flex 
+          justify-center bg-teal-400 w-72 p-7 rounded-md 
+           sm:w-96 "
         >
-          Login
-        </button>
-        <Link to="/signup">
-          <p>Not Signup yet ? </p>
-        </Link>
-      </form>
-    </div>
+          <form
+            onSubmit={formik.handleSubmit}
+            class="flex flex-col items-center w-full"
+          >
+            <p class="text-lg mb-3 sm:text-xl md:text-2xl lg:text-3xl lg:mb-5">
+              Welcome Back !
+            </p>
+            {/* email */}
+            <Input formik={formik} name="email" place="Email" />
+            {/* password */}
+            <Input
+              formik={formik}
+              name="password"
+              type="password"
+              place="Password"
+            />
+            {/* submit button */}
+            <button
+              className={formik.isValid ? "btn" : ""}
+              disabled={!formik.isValid}
+              type="submit"
+            >
+              Login
+            </button>
+            <Link to="/signup">
+              <p class="mt-3 text-sm sm:text-base lg:text-lg">
+                Not Signup yet ? let's go{" "}
+              </p>
+            </Link>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 };
 

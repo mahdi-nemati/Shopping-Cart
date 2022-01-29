@@ -64,31 +64,62 @@ const SignupForm = () => {
     enableReinitialize: true,
   });
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
-        {/* name */}
-        <Input formik={formik} name="name" />
-        {/* email */}
-        <Input formik={formik} name="email" />
-        {/* phone */}
-        <Input formik={formik} name="phone" type="tel" />
-        {/* password */}
-        <Input formik={formik} name="password" type="password" />
-        {/* passwordConfirm */}
-        <Input formik={formik} name="passwordConfirm" type="password" />
-        {/* submit button */}
-        <button
-          className={formik.isValid ? "button" : ""}
-          disabled={!formik.isValid}
-          type="submit"
+    <main class="flex justify-center  h-auto">
+      <section class="flex justify-center text-teal-800 ">
+        <div
+          class="mt-20 sm:mt-24 md:mt-32 flex 
+          justify-center bg-teal-400 w-72 p-7 rounded-md 
+           sm:w-96 "
         >
-          Signup
-        </button>
-        <Link to="/login">
-          <p>Already Login ?</p>
-        </Link>
-      </form>
-    </div>
+          <form
+            onSubmit={formik.handleSubmit}
+            class="flex flex-col items-center w-full"
+          >
+            <p class="text-lg mb-3 sm:text-xl md:text-2xl lg:text-3xl lg:mb-5">
+              Sign Up for free !
+            </p>
+            {/* name */}
+            <Input formik={formik} name="name" place="Name" />
+            {/* email */}
+            <Input formik={formik} name="email" place="Email" />
+            {/* phone */}
+            <Input
+              formik={formik}
+              name="phone"
+              type="tel"
+              place="Phone Number"
+            />
+            {/* password */}
+            <Input
+              formik={formik}
+              name="password"
+              type="password"
+              place="Password"
+            />
+            {/* passwordConfirm */}
+            <Input
+              formik={formik}
+              name="passwordConfirm"
+              type="password"
+              place="Password Confirm"
+            />
+            {/* submit button */}
+            <button
+              className={formik.isValid ? "btn" : ""}
+              disabled={!formik.isValid}
+              type="submit"
+            >
+              Signup
+            </button>
+            <Link to="/login">
+              <p class="mt-3 text-sm sm:text-base lg:text-lg">
+                Already Login ? Click here !
+              </p>
+            </Link>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 };
 
