@@ -21,9 +21,11 @@ const LoginForm = () => {
       password,
     };
     try {
-      const { data } = await LoginUser(userDate);
-      setAuth(data);
-      localStorage.setItem("authState", JSON.stringify(data));
+      // FETCHING TO FAKE DATA BASE
+      
+      // const { data } = await LoginUser(userDate);
+      // setAuth(data);
+      // localStorage.setItem("authState", JSON.stringify(data));
       navigate("/");
     } catch (error) {
       if (error.response && error.response.data.message) {

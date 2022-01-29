@@ -25,9 +25,10 @@ const SignupForm = () => {
       password: values.password,
     };
     try {
-      const { data } = await signupUser(userData);
-      setAuth(data);
-      localStorage.setItem("authState", JSON.stringify(data));
+      //FETCHING TO FAKE DATA BASE
+      // const { data } = await signupUser(userData);
+      // setAuth(data);
+      // localStorage.setItem("authState", JSON.stringify(data));
       navigate("/");
     } catch (error) {
       if (error.response && error.response.data.message) {

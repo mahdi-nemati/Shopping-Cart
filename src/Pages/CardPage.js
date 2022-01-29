@@ -116,14 +116,14 @@ const CardPage = () => {
               <p>net price</p>
               <span>$ {total}</span>
             </div>
-            <Link to="/checkout" class="flex justify-center">
+            <div  class="flex justify-center">
               <button
                 class="bg-blue-500 w-full text-zinc-200 
               mt-4 pt-2 pb-2 pl-4 pr-4 rounded-md "
               >
                 Check Out
               </button>
-            </Link>
+            </div>
           </section>
         </section>
       </main>
