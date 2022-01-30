@@ -2,11 +2,8 @@ import Input from "../../common/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import { LoginUser } from "../../services/LoginService";
 import { toast } from "react-toastify";
-import { useAuthAction } from "../../Providers/AuthProvider";
 const LoginForm = () => {
-  const setAuth = useAuthAction();
   const navigate = useNavigate();
   // set initail
   const initialValues = {
@@ -15,11 +12,11 @@ const LoginForm = () => {
   };
   // set submit function
   const onSubmit = async (values) => {
-    const { email, password } = values;
-    const userDate = {
-      email,
-      password,
-    };
+    // const { email, password } = values;
+    // const userDate = {
+    //   email,
+    //   password,
+    // };
     try {
       // FETCHING TO FAKE DATA BASE
       

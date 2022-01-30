@@ -2,11 +2,9 @@ import Input from "../../common/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import { signupUser } from "../../services/SignupService";
 import { toast } from "react-toastify";
 import { useAuthAction } from "../../Providers/AuthProvider";
 const SignupForm = () => {
-  const setAuth = useAuthAction();
   const navigate = useNavigate();
   // set initail
   const initialValues = {
@@ -18,12 +16,12 @@ const SignupForm = () => {
   };
   // set submit function
   const onSubmit = async (values) => {
-    const userData = {
-      name: values.name,
-      email: values.email,
-      phoneNumber: values.phone,
-      password: values.password,
-    };
+    // const userData = {
+    //   name: values.name,
+    //   email: values.email,
+    //   phoneNumber: values.phone,
+    //   password: values.password,
+    // };
     try {
       //FETCHING TO FAKE DATA BASE
       // const { data } = await signupUser(userData);
