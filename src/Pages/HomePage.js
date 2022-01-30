@@ -2,6 +2,7 @@ import Layout from "../Layout/Layout";
 import * as data from "../Data/data";
 import { toast } from "react-toastify";
 import { useCartActions, useCart } from "../Providers/CartProvider";
+import Footer from "../Components/Footer/Footer";
 const checkInCart = (cart, product) => {
   return cart.find((c) => c.id === product.id);
 };
@@ -43,7 +44,7 @@ const HomePage = () => {
                   <p> $ {product.price}</p>
                 </div>
                 <button
-                  class="mt-6 bg-blue-500 text-zinc-200 p-2 m-1 rounded-md lg:text-lg" 
+                  class="mt-6 bg-blue-500 text-zinc-200 p-2 m-1 rounded-md lg:text-lg"
                   onClick={() => addProductHandler(product)}
                 >
                   {checkInCart(cart, product) ? "in cart" : " Add to cart"}
@@ -53,6 +54,7 @@ const HomePage = () => {
           })}
         </section>
       </main>
+      <Footer />
     </Layout>
   );
 };
