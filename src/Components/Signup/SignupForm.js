@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useAuthAction } from "../../Providers/AuthProvider";
 const SignupForm = () => {
   const navigate = useNavigate();
   // set initail
