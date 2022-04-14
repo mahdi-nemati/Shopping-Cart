@@ -1,7 +1,7 @@
 import Layout from "../Layout/Layout";
-import * as data from "../Data/data";
+import * as data from "../../Data/data";
 import { toast } from "react-toastify";
-import { useCartActions, useCart } from "../Providers/CartProvider";
+import { useCartActions, useCart } from "../../Providers/CartProvider";
 import Footer from "../Components/Footer/Footer";
 const checkInCart = (cart, product) => {
   return cart.find((c) => c.id === product.id);

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from "../Navigation/Navigation.module.css";
-import { useCart } from "../../Providers/CartProvider";
-import { useAuth } from "../../Providers/AuthProvider";
+import styles from "./Navigation.module.css";
+import { useCart } from "../../providers/CartProvider";
+import { useAuth } from "../../providers/AuthProvider";
 import { AiFillHome } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiLogIn } from "react-icons/bi";
