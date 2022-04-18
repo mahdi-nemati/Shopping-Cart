@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Layout from "../Layout/Layout";
-import { useCart, useCartActions } from "../../Providers/CartProvider";
+import Layout from "../../core/layout/Layout";
+import { useCart, useCartActions } from "../../providers/CartProvider";
 import { MdShoppingCart } from "react-icons/md";
 import "./CartItem.css";
 const CardPage = () => {

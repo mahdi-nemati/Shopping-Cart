@@ -1,8 +1,8 @@
-import Layout from "../Layout/Layout";
-import * as data from "../../Data/data";
+import Layout from "../../core/layout/Layout";
+import * as data from "../../data/data";
 import { toast } from "react-toastify";
-import { useCartActions, useCart } from "../../Providers/CartProvider";
-import Footer from "../Components/Footer/Footer";
+import { useCartActions, useCart } from "../../providers/CartProvider";
+import Footer from "../footer/Footer";
 const checkInCart = (cart, product) => {
   return cart.find((c) => c.id === product.id);
 };

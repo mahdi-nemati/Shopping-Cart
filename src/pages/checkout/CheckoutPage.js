@@ -1,5 +1,5 @@
-import Checkout from "../Components/Checkout/Checkout";
-import Layout from "../Layout/Layout";
+import Checkout from "../checkout/Checkout";
+import Layout from "../../core/layout/Layout";
 
 const CheckoutPage = () => {
   return (

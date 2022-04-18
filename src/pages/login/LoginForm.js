@@ -1,4 +1,4 @@
-import Input from "../../common/Input";
+import Input from "../../core/shared/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";

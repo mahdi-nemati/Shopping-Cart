@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../../Providers/AuthProvider";
+import { useAuth } from "../../providers/AuthProvider";
 
 const Checkout = () => {
   const auth = useAuth();
